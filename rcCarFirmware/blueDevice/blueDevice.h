@@ -20,10 +20,11 @@ class Bluetooth
 		char* getPin();
 
 	private:
+		SoftwareSerial ss;
 		int _baudRate;
 		char* _pin;
 		char* _name;
-		SoftwareSerial ss;
+
 };
 
 #endif
