@@ -1,6 +1,8 @@
+#include <blueDevice.h>
 #include <CommandHandler.h>
 #include <Wire.h>
 #include <Adafruit_MotorShield.h>
+#include <SoftwareSerial.h>
 
 #define turnSpeed 150
 #define turnDelay 500
@@ -23,11 +25,12 @@ Adafruit_DCMotor *backMotor = AFMS.getMotor(4);
 //Adafruit_DCMotor *myOtherMotor = AFMS.getMotor(2);
 
 CommandHandler ch;
-
+Bluetooth bt = Bluetooth(6,7);
 
 void setup() {
   Serial.begin(9600); 
   ch.begin();  
+  bt.start();
 
 }
 
